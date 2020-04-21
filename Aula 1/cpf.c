@@ -16,8 +16,8 @@ int check_digitos(char *cpf){
   int aux_soma = 0, aux_mult = 10;
   for (int i = 0; i < CPF_SIZE-2; i++)
   {
-    printf("%d\n", cpf[i]*aux_mult);
-    aux_soma += cpf[i]*aux_mult;
+    printf("%d * %d\n", cpf[i] - '0', aux_mult);
+    aux_soma += (cpf[i]-'0')*aux_mult;
     aux_mult--;
   }
   
@@ -56,6 +56,8 @@ int main(int argc, char const *argv[]) {
   //strcpy(pessoa.cpf, "008185736944");
 
   valida_cpf(pessoa.cpf);
+
+  //23231517117
 
   return 0;
 }
