@@ -30,7 +30,6 @@
 *.exe
 *.out
 *.app
-Aula 1/.vscode/tasks.json
-Aula 1/.vscode/launch.json
-Aula 1/cpf
+
 *.json
+aula_2/main
