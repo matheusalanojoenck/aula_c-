@@ -1,5 +1,6 @@
 #include <iostream>
-#include"Pessoa.hpp"
+#include "Pessoa.hpp"
+#include "Retangulo.hpp"
 
 int main(int argc, char const *argv[]) 
 {
@@ -18,6 +19,7 @@ int main(int argc, char const *argv[])
 
   Pessoa pessoa;
 
+  std::cout << "Pessoa" << std::endl;
   std::cout << "Nome: ";
   std::cin >> pessoa.nome;
   std::cout << "Idade: ";
@@ -27,8 +29,16 @@ int main(int argc, char const *argv[])
 
   std::cout << pessoa.nome << "\t" << pessoa.idade << "\t" << pessoa.cpf << std::endl;
 
-  std::cout << "Retangulo";
+  std::cout << "--------------------" << std::endl;
+  
+  Retangulo retangulo;
 
+  std::cout << "Retangulo" << std::endl;
+  std::cout << "Altura(cm): ";
+  std::cin >> retangulo.altura;
+  std::cout << "Largura(cm): ";
+  std::cin >> retangulo.largura;
+  std::cout << retangulo.altura << "\t" << retangulo.largura << std::endl;
 
   return 0;
 }
