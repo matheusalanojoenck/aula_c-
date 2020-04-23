@@ -4,6 +4,6 @@ class Pessoa{
   public:
     char nome[50];
     unsigned long cpf;
-    unsigned char idade;
+    unsigned short idade;
 };
 #endif
