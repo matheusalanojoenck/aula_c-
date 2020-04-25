@@ -1,4 +1,13 @@
 #include "Pessoa.hpp"
+#include <string>
+
+std::string Pessoa::getNome(){
+	return nome;
+}
+
+void Pessoa::setNome(std::string novoNome){
+	nome = novoNome;
+}
 
 unsigned long Pessoa::getCpf()
 {
