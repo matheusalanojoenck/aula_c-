@@ -4,8 +4,7 @@ class Retangulo
 {
 public:
   Retangulo();
-  Retangulo(float novaAltura);
-  Retangulo(float novaAltura, float novaLargura);
+  Retangulo(float novaAltura, float novaLargura = 0);
 
   float getAltura();
   void setAltura(float novaAltura);

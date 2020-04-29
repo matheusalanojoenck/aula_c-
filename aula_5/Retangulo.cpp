@@ -7,16 +7,10 @@ Retangulo::Retangulo()
     std::cout << "Construtor Retangulo 1" << std::endl;
 }
 
-Retangulo::Retangulo(float novaAltura)
-    : altura{novaAltura}, largura{novaAltura}
-{
-    std::cout << "Construtor Retangulo 2" << std::endl;
-}
-
 Retangulo::Retangulo(float novaAltura, float novaLargura)
     : altura{novaAltura}, largura{novaLargura}
 {
-    std::cout << "Construtor Retangulo 3" << std::endl;
+    std::cout << "Construtor Retangulo 2" << std::endl;
 }
 
 float Retangulo::getAltura(){
