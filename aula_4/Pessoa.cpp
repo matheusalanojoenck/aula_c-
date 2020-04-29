@@ -26,15 +26,15 @@ void Pessoa::setCpf(unsigned long novoCpf)
     
 }
 
-unsigned short Pessoa::getIdade()
-{
-    return idade;
-}
+// unsigned short Pessoa::getIdade()
+// {
+//     return idade;
+// }
 
-void Pessoa::setIdade(unsigned short novaIdade)
-{
-    idade = (unsigned char)novaIdade;
-}
+// void Pessoa::setIdade(unsigned short novaIdade)
+// {
+//     idade = (unsigned char)novaIdade;
+// }
 
 bool Pessoa::validarCPF(unsigned long cpf){
 	int somatorioValidaUltimo;

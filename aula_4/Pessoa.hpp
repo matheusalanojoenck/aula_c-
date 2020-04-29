@@ -7,16 +7,16 @@ class Pessoa{
     unsigned long getCpf();
     void setCpf(unsigned long novoCpf);
 
-    // inline unsigned short getIdade(){
-    //   return idade;
+    inline unsigned short getIdade(){
+      return idade;
 
-    // }
-    // inline void setIdade(const unsigned short novaIdade){
-    //   idade = (unsigned char)novaIdade;
-    // }
+    }
+    inline void setIdade(const unsigned short novaIdade){
+      idade = (unsigned char)novaIdade;
+    }
 
-    unsigned short getIdade();
-    void setIdade(const unsigned short novaIdade);
+    // unsigned short getIdade();
+    // void setIdade(const unsigned short novaIdade);
 
 
     std::string getNome();
