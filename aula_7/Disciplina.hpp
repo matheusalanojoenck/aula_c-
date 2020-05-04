@@ -18,8 +18,16 @@ class Disciplina{
 		Pessoa* getProfessor();
 		void setProfessor(Pessoa* novoPefrossor);
 
+		std::string getNomeProfessor();
+
+		bool adicionarAluno(Pessoa* aluno);
+
+		Pessoa* getVetorAlunos();
+
 	private:
+		int index = 0;//quanos alunos foram adicionados
 		Pessoa* professor;
+		Pessoa* alunos{new Pessoa[50]};
 		std::string nome;
 		unsigned short int cargaHoraria;
 };
