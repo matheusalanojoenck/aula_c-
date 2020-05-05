@@ -5,18 +5,22 @@ Disciplina::Disciplina(std::string nomeDisciplina)
 	:nome{nomeDisciplina} {
 }
 
-Pessoa* Disciplina::getVetorAlunos(){
+Pessoa** Disciplina::getVetorAlunos(){
 	return alunos;
 }
 
 bool Disciplina::adicionarAluno(Pessoa* aluno){
-	if(index >= 50){
+	if(numAlunos > 50){
 		return false;
 	} else{
-		alunos[index] = *aluno;
-		index++;
+		alunos[numAlunos] = aluno;
+		numAlunos++;
 		return true;
 	}
+}
+
+unsigned int Disciplina::getNumAlunos(){
+	return numAlunos;
 }
 
 Pessoa* Disciplina::getProfessor(){

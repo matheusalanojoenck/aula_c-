@@ -21,13 +21,13 @@ class Disciplina{
 		std::string getNomeProfessor();
 
 		bool adicionarAluno(Pessoa* aluno);
-
-		Pessoa* getVetorAlunos();
+		Pessoa** getVetorAlunos();
+		unsigned int getNumAlunos();
 
 	private:
-		int index = 0;//quanos alunos foram adicionados
+		int numAlunos = 0;//quanos alunos foram adicionados
 		Pessoa* professor;
-		Pessoa* alunos{new Pessoa[50]};
+		Pessoa* alunos[50];
 		std::string nome;
 		unsigned short int cargaHoraria;
 };

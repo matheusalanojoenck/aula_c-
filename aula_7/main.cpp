@@ -36,27 +36,26 @@ int main(){
 	// delete p2;
 	// delete[] vetor;
 
-	Pessoa p1{"Matheus", 20, 11111111111};
-	Pessoa p2{"Maria", 21, 22222222222};
-	Pessoa p3{"Joao", 19, 33333333333};
+	Pessoa* p1{new Pessoa{"Matheus", 20, 11111111111}};
+	Pessoa* p2{new Pessoa{"Maria", 21, 22222222222}};
+	Pessoa* p3{new Pessoa{"Joao", 19, 33333333333}};
 
 	Disciplina disciplina{"C++"};
-	disciplina.adicionarAluno(&p1);
-	disciplina.adicionarAluno(&p2);
-	disciplina.adicionarAluno(&p3);
+	disciplina.setProfessor(p1);
+	disciplina.adicionarAluno(p2);
+	disciplina.adicionarAluno(p3);
 	
-	std::cout << disciplina.getVetorAlunos()[0].getNome() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[0].getIdade() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[0].getCpf() << std::endl;
+	std::cout << "Professor" << std::endl;
+	std::cout << disciplina.getProfessor()->getNome() << std::endl;
+	std::cout << disciplina.getProfessor()->getIdade() << std::endl;
+	std::cout << disciplina.getProfessor()->getCpf() << std::endl;
 
-	std::cout << disciplina.getVetorAlunos()[1].getNome() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[1].getIdade() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[1].getCpf() << std::endl;
-
-	std::cout << disciplina.getVetorAlunos()[2].getNome() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[2].getIdade() << std::endl;
-	std::cout << disciplina.getVetorAlunos()[2].getCpf() << std::endl;
-
+	for (unsigned int i = 0; i < disciplina.getNumAlunos(); i++){
+		std::cout << "Aluno " << i+1 << std::endl;
+		std::cout << disciplina.getVetorAlunos()[i]->getNome() << std::endl;
+		std::cout << disciplina.getVetorAlunos()[i]->getIdade() << std::endl;
+		std::cout << disciplina.getVetorAlunos()[i]->getCpf() << std::endl;
+	}
 
 	return 0;
 }
