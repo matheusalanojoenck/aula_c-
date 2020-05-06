@@ -10,7 +10,7 @@ Pessoa** Disciplina::getVetorAlunos(){
 }
 
 bool Disciplina::adicionarAluno(Pessoa* aluno){
-	if(numAlunos > 50){
+	if(numAlunos >= 50){
 		return false;
 	} else{
 		alunos[numAlunos] = aluno;
