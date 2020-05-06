@@ -23,6 +23,7 @@ class Disciplina{
 		bool adicionarAluno(Pessoa* aluno);
 		Pessoa** getVetorAlunos();
 		unsigned int getNumAlunos();
+		void imprimeDados(std::string& cabecalho, unsigned int cargaHorario);
 
 	private:
 		int numAlunos = 0;//quanos alunos foram adicionados
