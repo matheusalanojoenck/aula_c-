@@ -4,11 +4,6 @@
 #include <string>
 
 class Curso{
-    private:
-        std::string nomeCurso;
-        unsigned short cargaHoraririaMinima;
-        unsigned short anoCriacao;
-
     public:
         Curso(std::string novoNomeCurso);
 
@@ -20,6 +15,10 @@ class Curso{
 
         unsigned short getAnoCriacao();
         void setAnoCriacao(unsigned short novoAnoCriacao);
+    private:
+        std::string nomeCurso;
+        unsigned short cargaHoraririaMinima;
+        unsigned short anoCriacao;
 };
 
 #endif

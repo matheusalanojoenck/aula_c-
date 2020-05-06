@@ -18,8 +18,7 @@ int main(){
 
 	std::string cabecalho = "Dados da disciplina";
 	unsigned int cargaHorariaTotal = curso.getCargaHorariaMinima();
-	disciplina.imprimeDados(cabecalho,
-	cargaHorariaTotal);
+	disciplina.imprimeDados(cabecalho, cargaHorariaTotal);
 
 	delete p1;
 
