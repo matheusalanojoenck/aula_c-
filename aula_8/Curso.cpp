@@ -24,6 +24,6 @@ unsigned short Curso::getAnoCriacao(){
     return anoCriacao;
 }
 
-void Curso::setCargaHoraria(unsigned short novoAnoCriacao){
-    cargaHoraririaMinima = novoAnoCriacao;
+void Curso::setAnoCriacao(unsigned short novoAnoCriacao){
+    anoCriacao = novoAnoCriacao;
 }

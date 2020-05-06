@@ -2,8 +2,8 @@
 #include "Pessoa.hpp"
 #include <iostream>
 
-Disciplina::Disciplina(std::string nomeDisciplina)
-	:nome{nomeDisciplina} {
+Disciplina::Disciplina(std::string nomeDisciplina, Curso& novoCurso)
+	:nome{nomeDisciplina}, curso{novoCurso}{
 }
 
 Pessoa** Disciplina::getVetorAlunos(){
@@ -60,4 +60,8 @@ void Disciplina::imprimeDados(std::string& cabecalho, unsigned int cargaTotalCur
 	std::cout << "Carga: " << cargaHoraria << std::endl;
 	std::cout << "Pct do curso: " << pctCurso << "%" << std::endl;
 	std::cout << "Professor: " << professor->getNome() << std::endl;
+
+	std::cout << "Nome do curso: " << curso.getNomeCurso() << std::endl;
+	std::cout << "Ano de criacao: " << curso.getAnoCriacao() << std::endl;
+	std::cout << "Carga Horaria: " << curso.getCargaHorariaMinima() << std::endl;
 }

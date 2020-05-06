@@ -3,23 +3,21 @@
 
 #include "Pessoa.hpp"
 #include "Disciplina.hpp"
+#include "Curso.hpp"
 
 int main(){
 
-	int v = 20;
-	int& ref{v};
-	std::cout << ref << std::endl;
-	v = 30;
-	std::cout << ref << std::endl;
-
+	Curso curso{"BCC"};
+	curso.setAnoCriacao(2019);
+	curso.setCargaHoraria(1000);
 
 	Pessoa* p1{new Pessoa{"Joao", 20}};
-	Disciplina disciplina{"C++"};
+	Disciplina disciplina{"C++", curso};
 	disciplina.setProfessor(p1);
 	disciplina.setCargaHoraria(72);
 
 	std::string cabecalho = "Dados da disciplina";
-	unsigned int cargaHorariaTotal = 3000;
+	unsigned int cargaHorariaTotal = curso.getCargaHorariaMinima();
 	disciplina.imprimeDados(cabecalho,
 	cargaHorariaTotal);
 

@@ -4,10 +4,11 @@
 #include <string>
 
 #include "Pessoa.hpp"
+#include "Curso.hpp"
 
 class Disciplina{
 	public:
-		Disciplina(std::string nomeDisciplina);
+		Disciplina(std::string nomeDisciplina, Curso& novoCurso);
 
 		std::string getNome();
 		void setNome(std::string novoNome);
@@ -31,5 +32,7 @@ class Disciplina{
 		Pessoa* alunos[50];
 		std::string nome;
 		unsigned short int cargaHoraria;
+		Curso& curso;
+
 };
 #endif
