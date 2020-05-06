@@ -1,5 +1,6 @@
 #include "Disciplina.hpp"
 #include "Pessoa.hpp"
+#include <iostream>
 
 Disciplina::Disciplina(std::string nomeDisciplina)
 	:nome{nomeDisciplina} {
@@ -49,4 +50,14 @@ int Disciplina::getCargaHoraria(){
 
 void Disciplina::setCargaHoraria(unsigned int novaCarga){
 	cargaHoraria = novaCarga;
+}
+
+void Disciplina::imprimeDados(std::string& cabecalho, unsigned int cargaTotalCurso){
+	double pctCurso = (double)cargaHoraria/cargaTotalCurso;
+	pctCurso = pctCurso * 100;
+	std::cout << cabecalho << std::endl;
+	std::cout << "Disciplina: " << nome << std::endl;
+	std::cout << "Carga: " << cargaHoraria << std::endl;
+	std::cout << "Pct do curso: " << pctCurso << "%" << std::endl;
+	std::cout << "Professor: " << professor->getNome() << std::endl;
 }
