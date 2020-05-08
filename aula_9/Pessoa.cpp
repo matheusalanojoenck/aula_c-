@@ -5,18 +5,18 @@
 Pessoa::Pessoa(){
 }
 
-Pessoa::Pessoa(std::string nomePessoa)
-	:nome{nomePessoa} {
+Pessoa::Pessoa(std::string nome)
+	:nome{nome} {
 }
 
-Pessoa:: Pessoa(std::string nomePessoa, unsigned short int idadePessoa)
-	:nome{nomePessoa}, idade{(unsigned char)idadePessoa} {
+Pessoa:: Pessoa(std::string nome, unsigned short int idade)
+	:nome{nome}, idade{(unsigned char)idade} {
 }
 
-Pessoa:: Pessoa(std::string nomePessoa, unsigned short int idadePessoa, unsigned long cpfPessoa)
-		: Pessoa(nomePessoa, idadePessoa) {
-	if(validarCPF(cpfPessoa))
-		cpf = cpfPessoa;
+Pessoa:: Pessoa(std::string nome, unsigned short int idade, unsigned long cpf)
+		: nome{nome}, idade{(unsigned char)idade} {
+	if(validarCPF(cpf))
+		this->cpf = cpf;
 	else
 		cpf = 0;
 }
@@ -25,8 +25,8 @@ std::string Pessoa::getNome(){
 	return nome;
 }
 
-void Pessoa::setNome(std::string novoNome){
-	nome = novoNome;
+void Pessoa::setNome(std::string nome){
+	this->nome = nome;
 }
 
 unsigned long Pessoa::getCpf(){
@@ -45,23 +45,23 @@ unsigned short int Pessoa::getIdade(){
 	return idade;
 }
 
-void Pessoa::setIdade(unsigned short int novaIdade){
-	idade =  novaIdade;
+void Pessoa::setIdade(unsigned short int idade){
+	this->idade = (unsigned char) idade;
 }
 
-bool Pessoa::validarCPF(unsigned long cpfTeste){
+bool Pessoa::validarCPF(unsigned long cpf){
 	int somatorioValidaUltimo;
 	int modulo;
 	int somatorioValidaPenultimo = 0;
-	int ultimo = cpfTeste%10;
-	cpfTeste = cpfTeste/10;
-	int penultimo = cpfTeste%10;
-	cpfTeste = cpfTeste/10;
+	int ultimo = cpf%10;
+	cpf = cpf/10;
+	int penultimo = cpf%10;
+	cpf = cpf/10;
 	
 	somatorioValidaUltimo = penultimo*2;
 	for(int i=2; i <= 11; i++){
-		modulo = cpfTeste%10;
-		cpfTeste = cpfTeste/10;
+		modulo = cpf%10;
+		cpf = cpf/10;
 		somatorioValidaPenultimo += modulo*i;
 		somatorioValidaUltimo += modulo*(i+1);
 	}
@@ -82,4 +82,10 @@ bool Pessoa::validarCPF(unsigned long cpfTeste){
 			return false;//cpf invalido
 	}
 	return true;//cpf valido
+}
+
+void Pessoa::imprimeDados(){
+	std::cout << "Nome: " << this->nome << std::endl;
+	std::cout << "Idade: " << (unsigned int)this->idade << std::endl;
+	std::cout << "CPF: " << this->cpf << std::endl;
 }

@@ -5,19 +5,21 @@
 
 class Curso{
     public:
-        Curso(std::string novoNomeCurso);
+        Curso(std::string nome, unsigned short cargaHorariaMinima, unsigned int anoCriacao);
 
         std::string getNomeCurso();
-        void setNomeCurso(std::string novoNomeCurso);
+        void setNomeCurso(std::string nome);
 
         unsigned short getCargaHorariaMinima();
-        void setCargaHoraria(unsigned short novaCargaHorariaMinima);
+        void setCargaHoraria(unsigned int cargaHorariaMinima);
 
         unsigned short getAnoCriacao();
-        void setAnoCriacao(unsigned short novoAnoCriacao);
+        void setAnoCriacao(unsigned short anoCriacao);
+
+        void imprimeDados();
     private:
-        std::string nomeCurso;
-        unsigned short cargaHoraririaMinima;
+        std::string nome;
+        unsigned int cargaHoraririaMinima;
         unsigned short anoCriacao;
 };
 

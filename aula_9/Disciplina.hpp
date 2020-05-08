@@ -8,31 +8,30 @@
 
 class Disciplina{
 	public:
-		Disciplina(std::string nomeDisciplina, Curso& novoCurso);
+		Disciplina(std::string nome, Curso& curso, unsigned short cargaHoraria, Pessoa* professor);
 
 		std::string getNome();
-		void setNome(std::string novoNome);
+		void setNome(std::string nome);
 		
 		int getCargaHoraria();
-		void setCargaHoraria(unsigned int novaCarga);
+		void setCargaHoraria(unsigned short cargaHoraria);
 
 		Pessoa* getProfessor();
-		void setProfessor(Pessoa* novoPefrossor);
+		void setProfessor(Pessoa* professor);
 
 		std::string getNomeProfessor();
 
 		bool adicionarAluno(Pessoa* aluno);
 		Pessoa** getVetorAlunos();
 		unsigned int getNumAlunos();
-		void imprimeDados(std::string& cabecalho, unsigned int cargaHorario);
+		void imprimeDados();
 
 	private:
-		int numAlunos = 0;//quanos alunos foram adicionados
+		std::string nome;
+		Curso& curso;
+		unsigned short cargaHoraria;
 		Pessoa* professor;
 		Pessoa* alunos[50];
-		std::string nome;
-		unsigned short int cargaHoraria;
-		Curso& curso;
-
+		int numAlunos = 0;//quanos alunos foram adicionados
 };
 #endif
