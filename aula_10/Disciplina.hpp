@@ -2,6 +2,7 @@
 #define DISCIPLINA_H
 
 #include <string>
+#include <list>
 
 #include "Pessoa.hpp"
 #include "Curso.hpp"
@@ -22,8 +23,12 @@ class Disciplina{
 		std::string getNomeProfessor();
 
 		bool adicionarAluno(Pessoa* aluno);
-		Pessoa** getVetorAlunos();
-		unsigned int getNumAlunos();
+		void removeAluno(Pessoa* aluno);
+		void removeAluno(unsigned long cpf);
+
+		std::list<Pessoa*> getVetorAlunos();
+
+		void imprimeAlunos();
 		void imprimeDados();
 
 	private:
@@ -31,7 +36,6 @@ class Disciplina{
 		Curso& curso;
 		unsigned short cargaHoraria;
 		Pessoa* professor;
-		Pessoa* alunos[50];
-		int numAlunos = 0;//quanos alunos foram adicionados
+		std::list<Pessoa*> alunos;
 };
 #endif

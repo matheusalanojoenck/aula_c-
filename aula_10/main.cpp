@@ -7,47 +7,32 @@
 #include "Curso.hpp"
 
 int main(){
-/* 	std::list<int> lista;
-	std::list<int>::iterator it;
 
-	lista.push_back(5);
-	lista.push_back(10);
-	lista.push_front(28);
-
-	for(it = lista.begin(); it != lista.end(); it++){
-		std::cout << *it << std::endl;
-	} */
-
+	
 	Pessoa* p1{new Pessoa{"Matheus"}};
-	Pessoa* p2{new Pessoa{"Maria"}};
-	Pessoa* p3{new Pessoa{"Pedro"}};
-	Pessoa* p4{new Pessoa{"Pedro"}};
+	Curso curso{"BCC", 4000, 2020};
+	Disciplina disciplina{"C++", curso, 72, p1};
 
-	std::list<Pessoa*> pessoas;
-	std::list<Pessoa*>::iterator itPessoas;
-	pessoas.push_back(p1);
-	pessoas.push_back(p2);
-	pessoas.push_back(p3);
-	pessoas.push_back(p4);
+	Pessoa* p2{new Pessoa{"Maria", 23, 11111111111}};
+	Pessoa* p3{new Pessoa{"Pedro", 20, 22222222222}};
+	Pessoa* p4{new Pessoa{"Mario", 21, 33333333333}};
 
-	for(itPessoas = pessoas.begin(); itPessoas != pessoas.end(); itPessoas++){
-		std::cout << (*itPessoas)->getNome() << std::endl;
-	}
+	disciplina.adicionarAluno(p2);
+	disciplina.adicionarAluno(p3);
+	disciplina.adicionarAluno(p4);
 
-	itPessoas = pessoas.begin();
-	while(itPessoas != pessoas.end()){
-		if((*itPessoas)->getNome() == "Pedro"){
-			itPessoas = pessoas.erase(itPessoas);
-		}else{
-			itPessoas++;
-		}
-	}
+	std::cout << "Lista completa de alunos" << std::endl;
+	disciplina.imprimeAlunos();
 
-	for(itPessoas = pessoas.begin(); itPessoas != pessoas.end(); itPessoas++){
-		std::cout << (*itPessoas)->getNome() << std::endl;
-	}
+	disciplina.removeAluno(p2);
 
+	std::cout << std::endl << "Lista de alunos apos remover um aluno" << std::endl;
+	disciplina.imprimeAlunos();
 
+	disciplina.removeAluno(33333333333);
+
+	std::cout << std::endl << "Lista de alunos apos remover um aluno pelo cpf" << std::endl;
+	disciplina.imprimeAlunos();
 
 	return 0;
 }

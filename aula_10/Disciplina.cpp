@@ -1,27 +1,49 @@
 #include "Disciplina.hpp"
-#include "Pessoa.hpp"
 #include <iostream>
 
 Disciplina::Disciplina(std::string nome, Curso& curso, unsigned short cargaHoraria, Pessoa* professor)
 	:nome{nome}, curso{curso}, cargaHoraria{cargaHoraria}, professor{professor}{
 }
 
-Pessoa** Disciplina::getVetorAlunos(){
+std::list<Pessoa*> Disciplina::getVetorAlunos(){
 	return alunos;
 }
 
 bool Disciplina::adicionarAluno(Pessoa* aluno){
-	if(numAlunos >= 50){
-		return false;
-	} else{
-		alunos[numAlunos] = aluno;
-		numAlunos++;
-		return true;
+	std::list<Pessoa*>::iterator it;
+	/**
+	 * Checando se aluno ja foi cadastrado, comparando CPF dos alunos cadastros 
+	 * retorna false caso ja haja um estudante com o mesmo cpf
+	 * retorna true se a inserção do aluno ocorrer normalmente
+	 */
+	for (it = alunos.begin(); it != alunos.end(); it++)
+	{
+		if(aluno->getCpf() == (*it)->getCpf()){
+			return false;
+		}
 	}
+	alunos.push_back(aluno);
+	return true;
 }
 
-unsigned int Disciplina::getNumAlunos(){
-	return numAlunos;
+void Disciplina::removeAluno(Pessoa* aluno){	
+	alunos.remove(aluno);
+}
+
+/**
+ * Procura o aluno pro CPF e ao encontrar, o apaga da lista "alunos"
+ */
+void Disciplina::removeAluno(unsigned long cpf){
+	std::list<Pessoa*>::iterator it;
+
+	it = alunos.begin();
+	while(it != alunos.end()){
+		if((*it)->getCpf() == cpf){
+			it = alunos.erase(it);
+		}else{
+			it++;
+		}
+	}
 }
 
 Pessoa* Disciplina::getProfessor(){
@@ -50,6 +72,14 @@ int Disciplina::getCargaHoraria(){
 
 void Disciplina::setCargaHoraria(unsigned short cargaHoraria){
 	this->cargaHoraria = cargaHoraria;
+}
+
+void Disciplina::imprimeAlunos(){
+	std::list<Pessoa*>::iterator it;
+	for(it = alunos.begin(); it != alunos.end(); it++){
+		std::cout << (*it)->getNome() << std::endl;
+	}
+
 }
 
 void Disciplina::imprimeDados(){
