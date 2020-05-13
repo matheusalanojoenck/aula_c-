@@ -2,6 +2,9 @@
 #define CURSO_H
 
 #include <string>
+#include <list>
+
+#include "Disciplina.hpp"
 
 class Curso{
     public:
@@ -16,13 +19,17 @@ class Curso{
         unsigned short getAnoCriacao();
         void setAnoCriacao(unsigned short anoCriacao);
 
-        
+        void adicionarDisciplina(Disciplina* disciplina);
+        void removerDisciplina(Disciplina* disciplina);
 
         void imprimeDados();
+        void imprimeDisciplinas();
+
     private:
         std::string nome;
         unsigned int cargaHoraririaMinima;
         unsigned short anoCriacao;
+        std::list<Disciplina*> disciplinas;
 };
 
 #endif
