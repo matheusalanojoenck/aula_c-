@@ -21,6 +21,7 @@ SalaAula* Disciplina::getSalaAula(){
 
 void Disciplina::setSalaAula(SalaAula* salaAula){
 	this->salaAula = salaAula;
+	salaAula->adicionarDisciplina(this);
 }
 
 void Disciplina::removerAluno(unsigned long cpf){

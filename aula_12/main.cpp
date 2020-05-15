@@ -18,9 +18,22 @@ int main(){
 
 	SalaAula sala{"F204", 20};
 
-	dis1.setSalaAula(&sala);
+	std::cout << "Lista de disciplinas em salaAula" << std::endl; 
+	sala.mostraSalas();
 
-	std::cout << dis1.getSalaAula() << std::endl;
+	dis1.setSalaAula(&sala);
+	dis2.setSalaAula(&sala);
+
+	
+
+	std::cout << std::endl << "Lista de disciplinas em salaAula apos setSalaAula" << std::endl;
+	sala.mostraSalas();
+
+	std::cout << std::endl;
+	std::cout << "Disciplina: " << dis1.getNome() << " na sala: " << dis1.getSalaAula()->getNome() << std::endl;
+	std::cout << "Disciplina: " << dis2.getNome() << " na sala: " << dis2.getSalaAula()->getNome() << std::endl;
+
+
 
 	return 0;
 }

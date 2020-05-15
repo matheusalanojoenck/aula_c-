@@ -1,3 +1,4 @@
+#include <iostream>
 #include "SalaAula.hpp"
 
 SalaAula::SalaAula(std::string nome, unsigned int capacidade)
@@ -6,7 +7,6 @@ SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 
 void SalaAula::adicionarDisciplina(Disciplina* disciplina){
 	disciplinasMinistradas.push_back(disciplina);
-	//disciplina->setSalaAula(this);
 }
 
 void SalaAula::removerDisciplina(Disciplina* disciplina){
@@ -32,4 +32,17 @@ unsigned int SalaAula::getCapacidade(){
 
 void SalaAula::setCapcidade(unsigned int capacidade){
 	this->capacidade = capacidade;
+}
+
+void SalaAula::mostraSalas(){
+
+	if(disciplinasMinistradas.empty()){
+		std::cout << "disciplinasMinistradas vazio" << std::endl;
+	}
+
+	std::list<Disciplina*>::iterator it;
+
+	for(it = disciplinasMinistradas.begin(); it != disciplinasMinistradas.end(); it++){
+		std::cout << (*it)->getNome() << std::endl;
+	}
 }

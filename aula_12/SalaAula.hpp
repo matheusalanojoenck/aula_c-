@@ -20,6 +20,8 @@ class SalaAula{
 		void removerDisciplina(Disciplina* disciplina);
 		std::list<Disciplina*>& getDisciplina();
 
+		void mostraSalas();
+
 	private:
 		std::string nome;
 		unsigned int capacidade;
