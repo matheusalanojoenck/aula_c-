@@ -2,8 +2,8 @@ parametrosCompilacao=-Wall #-Wshadow
 
 all: aula14
 
-aula14: main.o Pessoa.o Disciplina.o SalaAula.o ConteudoMinistrado.o
-	g++ -o aula14 main.o Pessoa.o Disciplina.o SalaAula.o ConteudoMinistrado.o  $(parametrosCompilacao)
+aula14: main.o Pessoa.o Disciplina.o SalaAula.o ConteudoMinistrado.o Retangulo.o
+	g++ -o aula14 main.o Pessoa.o Disciplina.o SalaAula.o ConteudoMinistrado.o Retangulo.o $(parametrosCompilacao)
 
 main.o: main.cpp
 	g++ -c main.cpp $(parametrosCompilacao)
@@ -19,6 +19,9 @@ SalaAula.o: SalaAula.hpp SalaAula.cpp
 
 ConteudoMinistrado.o: ConteudoMinistrado.hpp ConteudoMinistrado.cpp
 	g++ -c ConteudoMinistrado.cpp $(parametrosCompilacao)
+
+Retangulo.o: Retangulo.hpp Retangulo.cpp
+	g++ -c Retangulo.cpp $(parametrosCompilacao)
 
 clean:
 	rm *.o aula14

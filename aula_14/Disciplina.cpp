@@ -66,16 +66,36 @@ SalaAula* Disciplina::getSalaAula(){
 	return salaAula;
 }
 
-void Disciplina::adicionarConteudoMinistrado(std::string conteudo, unsigned short cargaHorariaConteudo)
-{
+void Disciplina::adicionarConteudoMinistrado(std::string conteudo, unsigned short cargaHorariaConteudo){
 	this->conteudos.push_back(new ConteudoMinistrado{conteudo, cargaHorariaConteudo});
 }
 
-void Disciplina::imprimirConteudosMinistrados()
-{
+void Disciplina::removeConteudoMinistrado(unsigned int id){
 	std::list<ConteudoMinistrado *>::iterator it;
-	for (it = conteudos.begin(); it != conteudos.end(); it++)
-	{
+	for (it = conteudos.begin(); it != conteudos.end(); it++){
+		if((*it)->getId() == id){
+			break;
+		}
+	}
+	if (it != conteudos.end()){
+		conteudos.erase(it);
+	}
+}
+
+std::list<ConteudoMinistrado*> Disciplina::getListaConteudos(){
+	return conteudos;
+}
+
+void Disciplina::limparConteudos(){
+	std::list<ConteudoMinistrado *>::iterator it;
+	for (it = conteudos.begin(); it != conteudos.end(); it++){
+		delete *it;
+	}
+}
+
+void Disciplina::imprimirConteudosMinistrados(){
+	std::list<ConteudoMinistrado *>::iterator it;
+	for (it = conteudos.begin(); it != conteudos.end(); it++){
 		std::cout << "Id: " << (*it)->getId() << std::endl
 				  << "Conteudo: " << (*it)->getDescricao() << std::endl
 				  << "Carga: " << (*it)->getCargaHorariaConteudo() << std::endl
