@@ -2,22 +2,27 @@
 #include <string>
 #include <list>
 
-#include "Pessoa.hpp"
 #include "Disciplina.hpp"
 #include "SalaAula.hpp"
 #include "ConteudoMinistrado.hpp"
 
-
-int main(){
-	Pessoa prof1{"João", 40};
+int main()
+{
 	Disciplina dis1{"C++"};
-	dis1.setProfessor(&prof1);
+	Disciplina *dis2{new Disciplina{"Java"}};
+	SalaAula sala{"F203", 40};
 
-	dis1.adicionarConteudoMinistrado("Ponteiros", 4);
-	dis1.adicionarConteudoMinistrado("Referencias", 2);
+	dis1.setSalaAula(&sala);
+	dis2->setSalaAula(&sala);
 
-	dis1.imprimirConteudosMinistrados();
+	std::list<Disciplina *> disSala = sala.getDisciplinas();
+	std::list<Disciplina *>::iterator it;
+	for (it = disSala.begin(); it != disSala.end(); it++)
+		std::cout << (*it)->getNome() << std::endl;
 
+	delete dis2;
+
+	std::cout << "Fim do Programa" << std::endl;
 
 	return 0;
 }

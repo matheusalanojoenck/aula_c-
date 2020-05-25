@@ -1,7 +1,13 @@
+#include <iostream>
+
 #include "SalaAula.hpp"
 
 SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 	:nome{nome}, capacidade{capacidade}{
+}
+
+SalaAula::~SalaAula(){
+	std::cerr << "Destruindo a sala " << this->nome << std::endl;
 }
     
 std::string SalaAula::getNome(){

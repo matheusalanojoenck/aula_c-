@@ -8,6 +8,17 @@ Disciplina::Disciplina(std::string nome)
 	:nome{nome}, cargaHoraria{0}, salaAula{nullptr}, professor{nullptr} {
 }
 
+Disciplina::~Disciplina(){
+	std::cerr << "Destruindo a disciplina " << this->nome << std::endl;
+	if(this->salaAula != nullptr){
+		this->setSalaAula(nullptr);
+	}
+	std::list<ConteudoMinistrado*>::iterator it;
+	for(it=conteudos.begin(); it != conteudos.end(); it++){
+		delete *it;
+	}
+}
+
 void Disciplina::adicionarAluno(Pessoa* aluno){
 	this->alunos.push_back(aluno);
 }

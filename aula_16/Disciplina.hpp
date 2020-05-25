@@ -12,6 +12,8 @@ class Disciplina{
 	public:
 		Disciplina(std::string nome);
 
+		~Disciplina();
+
 		std::string getNome();
 		void setNome(std::string nome);
 		
