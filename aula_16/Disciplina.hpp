@@ -29,7 +29,7 @@ class Disciplina{
 
 		void setSalaAula(SalaAula* salaAula);
 		void setSalaAulaSemAtualizarSala(SalaAula* salaAula);
-
+		
 		SalaAula* getSalaAula();
 
 		void adicionarConteudoMinistrado(std::string conteudo, unsigned short cargaHorariaConteudo);

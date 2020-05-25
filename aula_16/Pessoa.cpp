@@ -9,16 +9,20 @@ Pessoa::Pessoa(std::string nome)
 	:nome{nome} {
 }
 
-Pessoa:: Pessoa(std::string nome, unsigned short int idade)
+Pessoa::Pessoa(std::string nome, unsigned short int idade)
 	:nome{nome}, idade{(unsigned char)idade} {
 }
 
-Pessoa:: Pessoa(std::string nome, unsigned short int idade, unsigned long cpf)
+Pessoa::Pessoa(std::string nome, unsigned short int idade, unsigned long cpf)
 		: Pessoa(nome, idade) {
 	if(validarCPF(cpf))
 		this->cpf = cpf;
 	else
 		this->cpf = 0;
+}
+
+Pessoa::~Pessoa(){
+	
 }
 
 std::string Pessoa::getNome(){

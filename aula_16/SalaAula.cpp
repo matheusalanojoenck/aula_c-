@@ -10,7 +10,7 @@ SalaAula::~SalaAula(){
 	std::cerr << "Destruindo a sala " << this->nome << std::endl;
 	std::list<Disciplina*>::iterator it;
 	for(it = disciplinasMinistradas.begin(); it != disciplinasMinistradas.end(); it++){
-//			(*it)->setSalaAulaSemAtualizarSala(nullptr);
+		(*it)->setSalaAulaSemAtualizarSala(nullptr);
 	}
 }
     

@@ -13,6 +13,8 @@ class Pessoa{
 
 		Pessoa(std::string nome, unsigned short int idade, unsigned long cpf);
 
+		~Pessoa();
+
 		unsigned short int getIdade();
 		void setIdade(unsigned short int idade);
 
