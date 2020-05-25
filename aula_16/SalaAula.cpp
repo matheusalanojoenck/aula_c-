@@ -1,6 +1,6 @@
-#include <iostream>
-
 #include "SalaAula.hpp"
+
+#include <iostream>
 
 SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 	:nome{nome}, capacidade{capacidade}{
@@ -8,6 +8,10 @@ SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 
 SalaAula::~SalaAula(){
 	std::cerr << "Destruindo a sala " << this->nome << std::endl;
+	std::list<Disciplina*>::iterator it;
+	for(it = disciplinasMinistradas.begin(); it != disciplinasMinistradas.end(); it++){
+//			(*it)->setSalaAulaSemAtualizarSala(nullptr);
+	}
 }
     
 std::string SalaAula::getNome(){

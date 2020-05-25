@@ -10,13 +10,11 @@ Disciplina::Disciplina(std::string nome)
 
 Disciplina::~Disciplina(){
 	std::cerr << "Destruindo a disciplina " << this->nome << std::endl;
-	if(this->salaAula != nullptr){
-		this->setSalaAula(nullptr);
-	}
+	//o setSalaAula vai remover a disciplina da sala de aula antiga, caso ela exista
+	this->setSalaAula(nullptr);
 	std::list<ConteudoMinistrado*>::iterator it;
-	for(it=conteudos.begin(); it != conteudos.end(); it++){
-		delete *it;
-	}
+	for(it=conteudos.begin(); it!=conteudos.end(); it++)
+		delete *it;//liberando a memória de cada conteúdo
 }
 
 void Disciplina::adicionarAluno(Pessoa* aluno){
@@ -65,6 +63,11 @@ void Disciplina::setProfessor(Pessoa* professor){
 	this->professor = professor;
 }
 
+void Disciplina::setSalaAulaSemAtualizarSala(SalaAula* salaAula){
+	//uma solução que talvez seria melhor é deixar essa função privada, e acessar em SalaAula via função amiga
+	this->salaAula = salaAula;
+}
+
 void Disciplina::setSalaAula(SalaAula* salaAula){
 	if(this->salaAula != nullptr)//se já existia uma sala, remover a disciplina dessa sala
 		this->salaAula->removerDisciplina(this);
@@ -81,11 +84,6 @@ void Disciplina::adicionarConteudoMinistrado(std::string conteudo, unsigned shor
 	this->conteudos.push_back(new ConteudoMinistrado{conteudo, cargaHorariaConteudo});
 }
 
-void Disciplina::imprimirConteudosMinistrados(){
-	std::list<ConteudoMinistrado*>::iterator it;
-	for(it = conteudos.begin(); it!=conteudos.end(); it++){
-		std::cout << "Id: " << (*it)->getId() << std::endl 
-			<< "Conteudo: " << (*it)->getDescricao() << std::endl
-			<< "Carga: " << (*it)->getCargaHorariaConteudo() << std::endl << std::endl;
-	}
+std::list<ConteudoMinistrado*>& Disciplina::getConteudos(){
+	return conteudos;
 }

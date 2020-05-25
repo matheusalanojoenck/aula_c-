@@ -11,7 +11,6 @@ class SalaAula;//forward declaration
 class Disciplina{
 	public:
 		Disciplina(std::string nome);
-
 		~Disciplina();
 
 		std::string getNome();
@@ -29,10 +28,12 @@ class Disciplina{
 		std::list<Pessoa*>& getAlunos();
 
 		void setSalaAula(SalaAula* salaAula);
+		void setSalaAulaSemAtualizarSala(SalaAula* salaAula);
+
 		SalaAula* getSalaAula();
 
 		void adicionarConteudoMinistrado(std::string conteudo, unsigned short cargaHorariaConteudo);
-		void imprimirConteudosMinistrados();
+		std::list<ConteudoMinistrado*>& getConteudos();
 	private:
 		std::string nome;
 		unsigned short int cargaHoraria;
