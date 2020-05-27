@@ -39,15 +39,15 @@ std::list<Pessoa*>& Disciplina::getAlunos(){//retornamos uma referência para a 
 	return alunos;
 }
 
-std::string Disciplina::getNome(){
+std::string Disciplina::getNome() const{
 	return this->nome;
 }
 
-void Disciplina::setNome(std::string nome){
+void Disciplina::setNome(const std::string& nome){
 	this->nome = nome;
 }
 
-int Disciplina::getCargaHoraria(){
+int Disciplina::getCargaHoraria() const{
 	return this->cargaHoraria;
 }
 

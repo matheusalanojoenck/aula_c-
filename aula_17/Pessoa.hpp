@@ -15,13 +15,13 @@ class Pessoa{
 
 		~Pessoa();
 
-		unsigned short int getIdade();
+		unsigned short int getIdade() const;
 		void setIdade(unsigned short int idade);
 
 		std::string getNome() const;
 		void setNome(const std::string& nome);
 
-		unsigned long getCpf();
+		unsigned long getCpf() const;
 		void setCpf(unsigned long cpf);
 		
 		void imprimeEnderecoMemoria();

@@ -13,10 +13,10 @@ class Disciplina{
 		Disciplina(std::string nome);
 		~Disciplina();
 
-		std::string getNome();
-		void setNome(std::string nome);
+		std::string getNome()const ;
+		void setNome(const std::string& nome);
 		
-		int getCargaHoraria();
+		int getCargaHoraria() const;
 		void setCargaHoraria(unsigned int cargaHoraria);
 		
 		Pessoa* getProfessor();

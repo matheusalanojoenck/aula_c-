@@ -14,15 +14,15 @@ SalaAula::~SalaAula(){
 	}
 }
     
-std::string SalaAula::getNome(){
+std::string SalaAula::getNome() const{
 	return nome;
 }
 
-void SalaAula::setNome(std::string nome){
+void SalaAula::setNome(const std::string& nome){
 	this->nome = nome;
 }
 
-unsigned int SalaAula::getCapacidade(){
+unsigned int SalaAula::getCapacidade() const{
 	return capacidade;
 }
 

@@ -33,7 +33,7 @@ void Pessoa::setNome(const std::string& nome){
 	this->nome = nome;
 }
 
-unsigned long Pessoa::getCpf(){
+unsigned long Pessoa::getCpf() const{
 	return this->cpf;
 }
 
@@ -42,7 +42,7 @@ void Pessoa::setCpf(unsigned long cpf){
 		this->cpf = cpf;
 }
 
-unsigned short int Pessoa::getIdade(){
+unsigned short int Pessoa::getIdade() const{
 	return this->idade;
 }
 
