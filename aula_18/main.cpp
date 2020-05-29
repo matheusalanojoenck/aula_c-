@@ -3,22 +3,27 @@
 
 #include "Disciplina.hpp"
 #include "Pessoa.hpp"
+#include "SalaAula.hpp"
+#include "Console.hpp"
 
 int main()
 {
 	Disciplina d{"C++"};
 	Pessoa p1{"Joao"};
+	d.setProfessor(&p1);
 
-	d.adicionarAluno(&p1);
-	const std::list<Pessoa *> &alunos{d.getAlunos()}; //acessamos a lista original
 	Pessoa p2{"Maria"};
-	//alunos.push_back(&p2); //modificamos o objeto interno de Disciplina
+	Pessoa p3{"Pedro"};
 
-	std::list<Pessoa *>::const_iterator it = d.getAlunos().begin();
-	for (; it != d.getAlunos().end(); it++)
-	{
-		std::cout << (*it)->getNome() << std::endl;
-	}
+	SalaAula sala{"F201", 30};
+	
+	d.setSalaAula(&sala);
+	d.adicionarAluno(&p2);
+	d.adicionarAluno(&p3);
+	d.adicionarConteudoMinistrado("CONST", 2);
+
+	Console console;
+	console.imprimirDadosDisciplina(d);
 
 	return 0;
 }

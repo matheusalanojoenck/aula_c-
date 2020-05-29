@@ -7,18 +7,18 @@ class Pessoa{
 	public:
 		Pessoa();
 
-		Pessoa(std::string nome);
+		Pessoa(const std::string& nome);
 
-		Pessoa(std::string nome, unsigned short int idade);
+		Pessoa(const std::string& nome, unsigned short int idade);
 
-		Pessoa(std::string nome, unsigned short int idade, unsigned long cpf);
+		Pessoa(const std::string& nome, unsigned short int idade, unsigned long cpf);
 
 		~Pessoa();
 
 		unsigned short int getIdade() const;
 		void setIdade(unsigned short int idade);
 
-		std::string getNome() const;
+		const std::string& getNome() const;
 		void setNome(const std::string& nome);
 
 		unsigned long getCpf() const;

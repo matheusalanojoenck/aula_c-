@@ -5,15 +5,15 @@
 Pessoa::Pessoa(){
 }
 
-Pessoa::Pessoa(std::string nome)
+Pessoa::Pessoa(const std::string& nome)
 	:nome{nome} {
 }
 
-Pessoa::Pessoa(std::string nome, unsigned short int idade)
+Pessoa::Pessoa(const std::string& nome, unsigned short int idade)
 	:nome{nome}, idade{(unsigned char)idade} {
 }
 
-Pessoa::Pessoa(std::string nome, unsigned short int idade, unsigned long cpf)
+Pessoa::Pessoa(const std::string& nome, unsigned short int idade, unsigned long cpf)
 		: Pessoa(nome, idade) {
 	if(validarCPF(cpf))
 		this->cpf = cpf;
@@ -25,7 +25,7 @@ Pessoa::~Pessoa(){
 	
 }
 
-std::string Pessoa::getNome() const{
+const std::string& Pessoa::getNome() const{
 	return this->nome;
 }
 

@@ -12,7 +12,7 @@ ConteudoMinistrado::~ConteudoMinistrado(){
 
 }
 
-std::string& ConteudoMinistrado::getDescricao(){
+const std::string& ConteudoMinistrado::getDescricao() const{
 	return descricao;
 }
 

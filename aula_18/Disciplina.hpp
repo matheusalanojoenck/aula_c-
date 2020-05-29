@@ -27,10 +27,10 @@ class Disciplina{
 		void removerAluno(unsigned long cpf);
 		const std::list<const Pessoa*>& getAlunos() const;
 
-		void setSalaAula(const SalaAula* salaAula);
-		void setSalaAulaSemAtualizarSala(const SalaAula* salaAula);
+		void setSalaAula(SalaAula* salaAula);
+		void setSalaAulaSemAtualizarSala(SalaAula* salaAula);
 		
-		const SalaAula* getSalaAula();
+		const SalaAula* getSalaAula() const;
 
 		void adicionarConteudoMinistrado(const std::string& conteudo, unsigned short cargaHorariaConteudo);
 		const std::list<const ConteudoMinistrado*>& getConteudos() const;
@@ -39,8 +39,8 @@ class Disciplina{
 		unsigned short int cargaHoraria;
 		SalaAula* salaAula;
 
-		Pessoa* professor;
-		std::list<Pessoa*> alunos;
-		std::list<ConteudoMinistrado*> conteudos;
+		const Pessoa* professor;
+		std::list<const Pessoa*> alunos;
+		std::list<const ConteudoMinistrado*> conteudos;
 };
 #endif

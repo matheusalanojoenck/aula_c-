@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-SalaAula::SalaAula(std::string nome, unsigned int capacidade)
+SalaAula::SalaAula(const std::string& nome, unsigned int capacidade)
 	:nome{nome}, capacidade{capacidade}{
 }
 
@@ -14,7 +14,7 @@ SalaAula::~SalaAula(){
 	}
 }
     
-std::string SalaAula::getNome() const{
+const std::string& SalaAula::getNome() const{
 	return nome;
 }
 
@@ -30,15 +30,15 @@ void SalaAula::setCapcidade(unsigned int capacidade){
 	this->capacidade = capacidade;
 }
 
+const std::list<Disciplina*>& SalaAula::getDisciplinas() const{
+	return disciplinasMinistradas;
+}
+
 void SalaAula::adicionarDisciplina(Disciplina* disciplina){
 	disciplinasMinistradas.push_back(disciplina);
 }
 
 void SalaAula::removerDisciplina(Disciplina* disciplina){
 	disciplinasMinistradas.remove(disciplina);
-}
-
-std::list<Disciplina*>& SalaAula::getDisciplinas(){
-	return disciplinasMinistradas;
 }
 

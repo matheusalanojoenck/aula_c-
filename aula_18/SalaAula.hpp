@@ -10,16 +10,16 @@
 class SalaAula{
 		friend void Disciplina::setSalaAula(SalaAula* salaAula);
 	public:
-		SalaAula(std::string nome, unsigned int capacidade);
+		SalaAula(const std::string& nome, unsigned int capacidade);
 		~SalaAula();
 		
-		std::string getNome() const;
+		const std::string& getNome() const;
 		void setNome(const std::string& nome);
 
 		unsigned int getCapacidade() const;
 		void setCapcidade(unsigned int capacidade);
 
-		std::list<Disciplina*>& getDisciplinas();
+		const std::list<Disciplina*>& getDisciplinas() const;
 	private:
 		void adicionarDisciplina(Disciplina* disciplina);
 		void removerDisciplina(Disciplina* disciplina);
