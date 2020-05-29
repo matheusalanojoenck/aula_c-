@@ -1,0 +1,11 @@
+Considere o protótipo da função membro a seguir e explique o
+objetivo de cada const na função
+const double* calcularImposto(const Investimento* const inv) const;
+
+1º const: referente a variável de retorno, indicando que essa só poder ser lida.
+
+2º const: indica que o ponteiro passado como referência só pode ser lido, sem poder alterar os dados do objeto.
+
+3º const: indica que a variável que recebe a referência do ponteiro não poder ser alterada para outra referência.
+
+4º const: indica que a função não altera o estado do objeto/não altera nenhum dado membro.
