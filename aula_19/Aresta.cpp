@@ -2,8 +2,8 @@
 
 unsigned int Aresta::proxId{0};
 
-Aresta::Aresta(Vertice* vertice1, Vertice* vertice2)
-    :id{proxId}, vertice1{vertice1}, vertice2{vertice1}
+Aresta::Aresta(Vertice* v1, Vertice* v2)
+    :id{proxId}, vertice1{v1}, vertice2{v2}
 {
     Aresta::proxId++;
 }

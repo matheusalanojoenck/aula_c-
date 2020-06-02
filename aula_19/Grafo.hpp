@@ -15,9 +15,9 @@ public:
     Grafo();
     ~Grafo();
     Vertice* adicionarVertice();
-    void removerVertice(Vertice vertice);
+    void removerVertice(Vertice* vertice);
     Aresta* adicionarAresta(Vertice* v1, Vertice* v2);
-    void removerAresta(Aresta aresta);
+    void removerAresta(Aresta* aresta);
     void imprimirGrafo();
 
 };
