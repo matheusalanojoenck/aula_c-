@@ -17,6 +17,7 @@ public:
     ~Vertice();
     unsigned int getId();
     void adicionarAresta(Aresta* aresta);
+    void removerAresta(Aresta* aresta);
     std::list<Aresta*> getArestas();
 };
 

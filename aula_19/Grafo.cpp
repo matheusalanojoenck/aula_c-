@@ -27,6 +27,15 @@ Aresta* Grafo::adicionarAresta(Vertice* v1, Vertice* v2)
     return a;
 }
 
+void Grafo::removerAresta(Aresta* aresta)
+{
+    aresta->getVertice1()->removerAresta(aresta);
+    aresta->getVertice2()->removerAresta(aresta);
+    arestas.remove(aresta);
+
+    delete aresta;
+}
+
 void Grafo::imprimirGrafo()
 {
     std::list<Aresta*>::iterator it;

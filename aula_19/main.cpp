@@ -14,15 +14,18 @@ int main(int argc, char const *argv[])
     Vertice* v2{g->adicionarVertice()};
     Vertice* v3{g->adicionarVertice()};
 
-    g->adicionarAresta(v1, v2);
+    //g->adicionarAresta(v1, v2);
     g->adicionarAresta(v1, v3);
-    // Aresta* a1{g->adicionarAresta(v1, v2)};
+     Aresta* a1{g->adicionarAresta(v1, v2)};
     // Aresta* a2{g->adicionarAresta(v1, v3)};
 
-
+    std::cout << "Lista completa" << std::endl;
     g->imprimirGrafo();
 
-    //std::cout << v1->getId() << v2->getId() << v3->getId() << std::endl;
+    g->removerAresta(a1);
+
+    std::cout << "Lista apos remoção" << std::endl;
+    g->imprimirGrafo();
     
     return 0;
 }

@@ -3,7 +3,7 @@
 unsigned int Vertice::proxId{0};
 
 Vertice::Vertice()
-    :id{proxId}
+    : id{proxId}
 {
     Vertice::proxId++;
 }
@@ -17,10 +17,17 @@ unsigned int Vertice::getId()
     return id;
 }
 
-void Vertice::adicionarAresta(Aresta* aresta){
+void Vertice::adicionarAresta(Aresta* aresta)
+{
     arestas.push_back(aresta);
 }
 
-std::list<Aresta*> Vertice::getArestas(){
+void Vertice::removerAresta(Aresta* aresta)
+{
+    arestas.remove(aresta);
+}
+
+std::list<Aresta *> Vertice::getArestas()
+{
     return arestas;
-} 
+}
