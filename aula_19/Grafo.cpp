@@ -8,6 +8,17 @@ Grafo::Grafo(/* args */)
 
 Grafo::~Grafo()
 {
+    std::list<Aresta*>::iterator it;
+    for (it = arestas.begin(); it != arestas.end(); it++)
+    {
+        delete *it;
+    }
+
+    std::list<Vertice*>::iterator itV;
+    for (itV = vertices.begin(); itV != vertices.end(); it++)
+    {
+        delete *it;
+    }
 }
 
 Vertice* Grafo::adicionarVertice()
@@ -15,6 +26,11 @@ Vertice* Grafo::adicionarVertice()
     Vertice* v{new Vertice};
     vertices.push_back(v);
     return v; 
+}
+
+void Grafo::removerVertice(Vertice* vertice)
+{
+
 }
 
 Aresta* Grafo::adicionarAresta(Vertice* v1, Vertice* v2)
@@ -48,4 +64,3 @@ void Grafo::imprimirGrafo()
     //std::cout << "Quantidade vertices no grafo: " << vertices.size() << std::endl;
     //std::cout << "Quantidade arestas no grafo: " << arestas.size() << std::endl;
 }
-

@@ -10,6 +10,11 @@ Vertice::Vertice()
 
 Vertice::~Vertice()
 {
+    std::list<Aresta*>::iterator it;
+    for (it = arestas.begin(); it != arestas.end(); it++)
+    {
+        delete *it;
+    }
 }
 
 unsigned int Vertice::getId()

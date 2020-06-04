@@ -1,4 +1,5 @@
 #include "Aresta.hpp"
+#include <iostream>
 
 unsigned int Aresta::proxId{0};
 
@@ -18,7 +19,7 @@ unsigned int Aresta::getId()
 }
 
 Vertice* Aresta::getVertice1()
-{
+{   
     return vertice1;
 }
 
