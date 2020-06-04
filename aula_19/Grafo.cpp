@@ -28,21 +28,38 @@ Vertice* Grafo::adicionarVertice()
     return v; 
 }
 
+/**
+ * Remoção de um vertice:
+ * a função itera sobre a lista de aresta do vertice e a remove do grafo
+ **/
 void Grafo::removerVertice(Vertice* vertice)
-{
-
+{   
+    std::list<Aresta*> copia = vertice->getArestas();
+    std::list<Aresta*>::iterator it = copia.begin();
+    for(;it != copia.end(); it++)
+    {   
+        this->removerAresta(*it);
+    }
+    delete vertice;
 }
 
 Aresta* Grafo::adicionarAresta(Vertice* v1, Vertice* v2)
 {   
+    if(v1 == v2) return nullptr;//os dois vertices nao podem ser iguais
+    if(v1 == nullptr || v2 == nullptr) return nullptr; //nenhum dos dois vertices podem ser null
+
     Aresta* a{new Aresta{v1, v2}}; //criando nova aresta
     v1->adicionarAresta(a); //adicionando essa aresta nos v1
     v2->adicionarAresta(a); //adicionando essa aresta nos v2
     arestas.push_back(a); //lista geral de arestas do grafo
-
     return a;
 }
 
+/**
+ * Remoção de uma aresta:
+ * vai para cada vertice dessa aresta e a essa aresta da lista dos dois vertices
+ * e remove a aresta da lista geral de vertices do grafo
+ **/
 void Grafo::removerAresta(Aresta* aresta)
 {
     aresta->getVertice1()->removerAresta(aresta);

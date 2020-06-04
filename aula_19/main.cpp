@@ -28,6 +28,10 @@ int main(int argc, char const *argv[])
 
     g->removerAresta(a1);
     std::cout << "Lista apos remoção de uma aresta" << std::endl;
+    g->imprimirGrafo();
+
+    std::cout << "Lista apos remoção de um vertice" << std::endl;
+    g->removerVertice(v3);
     g->imprimirGrafo();    
     return 0;
 }
