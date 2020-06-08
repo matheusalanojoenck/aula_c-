@@ -9,9 +9,8 @@ class Fila
 {
 private:
     std::list<T> fila;
-    unsigned int inicio, final;
 public:
-    Fila() :inicio{0}, final{0}
+    Fila()
     {
     }
 
