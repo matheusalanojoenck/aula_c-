@@ -15,9 +15,9 @@ Grafo::~Grafo()
     }
 
     std::list<Vertice*>::iterator itV;
-    for (itV = vertices.begin(); itV != vertices.end(); it++)
+    for (itV = vertices.begin(); itV != vertices.end(); itV++)
     {
-        delete *it;
+        delete *itV;
     }
 }
 
