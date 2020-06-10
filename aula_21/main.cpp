@@ -1,21 +1,26 @@
 #include <iostream>
 
 #include "Pilha.hpp"
+#include "Fila.hpp"
 
 int main(){
-	int retorno;
-	Pilha<> p;
-	p.push(1);
-	p.push(2);
-	p.push(3);
-	p.push(4);
-
-	while(!p.estaVazia()){
-		p.pop(&retorno);
-		std::cout << retorno << std::endl;
-	}
+	Fila<float> f;
+	f.push(1.2);
+	f.push(2.5);
+	f.push(3.4);
+	f.imprimeFila();
 	
-	std::cout << "Fim" << std::endl;
+	Fila<char> f2;
+	f2.push('a');
+	f2.push('b');
+	f2.push('c');
+	f2.imprimeFila();
+
+	Fila<> f3;
+	f3.push(1);
+	f3.push(2);
+	f3.push(3);
+	f3.imprimeFila();
 
 	return 0;
 }
