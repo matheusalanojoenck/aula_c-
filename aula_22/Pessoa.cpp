@@ -14,7 +14,7 @@ Pessoa::Pessoa(const std::string &nome)
 Pessoa::Pessoa(const std::string &nome, const unsigned long cpf)
 	: Pessoa(nome)
 {
-	std::cout << "Construtor Pessoa" << std::endl;
+	//std::cout << "Construtor Pessoa" << std::endl;
 	if (validarCPF(cpf))
 		this->cpf = cpf;
 	else

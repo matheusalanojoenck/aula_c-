@@ -7,6 +7,7 @@
 #include "Pessoa.hpp"
 #include "ConteudoMinistrado.hpp"
 #include "Professor.hpp"
+#include "Aluno.hpp"
 
 class SalaAula;//forward declaration
 
@@ -24,10 +25,10 @@ class Disciplina{
 		const Professor* getProfessor() const;
 		void setProfessor(Professor* professor);
 
-		void adicionarAluno(Pessoa* aluno);
-		void removerAluno(Pessoa* aluno);
+		void adicionarAluno(Aluno* aluno);
+		void removerAluno(Aluno* aluno);
 		void removerAluno(unsigned long cpf);
-		const std::list<Pessoa*>& getAlunos() const;
+		const std::list<Aluno*>& getAlunos() const;
 
 		void setSalaAula(SalaAula* salaAula);
 		void setSalaAulaSemAtualizarSala(SalaAula* salaAula);
@@ -42,7 +43,7 @@ class Disciplina{
 		SalaAula* salaAula;
 
 		Professor* professor;
-		std::list<Pessoa*> alunos;
+		std::list<Aluno*> alunos;
 		std::list<ConteudoMinistrado*> conteudos;
 };
 #endif

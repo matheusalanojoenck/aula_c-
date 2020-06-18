@@ -5,7 +5,7 @@ Professor::Professor(const std::string &nome, const unsigned long cpf,
                      const unsigned int salario, const unsigned short cargaHoraria)
     : Pessoa(nome, cpf), salario(salario), cargaHoraria(cargaHoraria)
 {
-	std::cout << "Construtor Professor" << std::endl;
+	//std::cout << "Construtor Professor" << std::endl;
     idade = (char)15;
 
 }
