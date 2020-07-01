@@ -12,7 +12,7 @@ class SalaAula;//forward declaration
 class Disciplina{
 	public:
 		Disciplina(std::string nome);
-		~Disciplina();
+		virtual ~Disciplina();
 
 		std::string getNome();
 		void setNome(std::string nome);
