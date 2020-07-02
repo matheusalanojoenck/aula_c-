@@ -7,9 +7,7 @@ class Euclidiana : public Trajeto
 {
 public:
     using Trajeto::Trajeto;
-
     virtual ~Euclidiana();
-
     virtual double calcularDistanciaPontos(const Ponto* const p1, const Ponto* const p2);
 };
 

@@ -5,10 +5,8 @@
 
 class Manhattan : public Trajeto
 {
-private:
-    
 public:
-    Manhattan();
+    using Trajeto::Trajeto;
     virtual ~Manhattan();
     virtual double calcularDistanciaPontos(const Ponto* const p1, const Ponto* const p2);
 };
