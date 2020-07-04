@@ -1,5 +1,4 @@
 #include "Trajeto.hpp"
-
 #include <iostream>
 
 Trajeto::Trajeto():pontos{new std::list<const Ponto*>}{
