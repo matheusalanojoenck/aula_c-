@@ -24,14 +24,13 @@ int main(){
 		std::cout << p->getNome() 
 			<< " " << p->getCpf() 
 			<< " " << p->getIdade() << std::endl;
-	}catch(std::exception& ex){
-		std::cout << "Ocorreu um erro generico " << ex.what() << std::endl;
 	}catch(std::invalid_argument& iv){
 		std::cout << "Argumento inválido: " <<  iv.what() << std::endl;
 	}catch(CPFInvalidoException& ci){
 		std::cout << "Erro de CPF: " <<  ci.what() << "CPF incorreto: " << ci.cpf << std::endl;
+	}catch(std::exception& ex){
+		std::cout << "Ocorreu um erro generico " << ex.what() << std::endl;
 	}
-
 
 	delete p;
 	return 0;
